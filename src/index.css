@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Attribution Control */
+.leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  font-size: 11px !important;
+  max-width: 90% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 18px 8px 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #666 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #4B5563 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.leaflet-control-attribution a:hover {
+  text-decoration: underline !important;
+  color: #1f3537 !important;
+}
+
+/* Custom popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+}
+
+.leaflet-popup-close-button {
+  background-color: #ddf503; /* Cor de fundo */
+    border: 2px solid #000000; /* Borda circular */
+    border-radius: 100%; /* Faz o botão ser redondo */
+    color: #000000; /* Cor do ícone "X" */
+    width: 24px; /* Largura do botão */
+    height: 24px; /* Altura do botão */
+    line-height: 20px; /* Centraliza o "X" */
+    text-align: center; /* Alinha o texto */
+    font-size: 14px; /* Tamanho do ícone */
+    cursor: pointer; /* Mostra o cursor como "mãozinha" */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); /* Sombra ao redor */
+    transition: background-color 0.8s ease, color 0.8s ease; /* Efeito suave ao interagir */
+}
+
+.leaflet-popup-close-button:hover {
+  background-color: #000000; /* Cor ao passar o mouse */
+  color: #000000; /* Cor do "X" no hover */
+}
+
+.leaflet-popup-close-button:focus {
+  outline: none; /* Remove o contorno ao focar */
+  box-shadow: 0 0 8px rgba(0, 120, 212, 10.5); /* Destaque no foco */
+}
+
+/* Custom tooltip styling */
+.leaflet-tooltip {
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  background-color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: white !important;
+}
+
+/* Custom zoom controls */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: white !important;
+  color: #666 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 18px !important;
+  border: none !important;
+}
+
+.leaflet-control-zoom a:first-child {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f8f8f8 !important;
+  color: #333 !important;
+}
+
+/* Map controls positioning */
+.leaflet-control-fullscreen,
+.leaflet-control-return {
+  position: absolute !important;
+}
+
+@media (min-width: 678px) {
+  .leaflet-control-fullscreen,
+  .leaflet-control-return {
+    top: 12px !important;
+  }
+
+  .leaflet-control-fullscreen {
+    right: 12px !important;
+  }
+
+  .leaflet-control-return {
+    right: 60px !important;
+  }
+
+  .leaflet-control-locate {
+    position: absolute !important;
+    top: 12px !important;
+    right: 108px !important;
+  }
+
+  .leaflet-control-zoom {
+    margin: 12px !important;
+  }
+}
+
+@media (max-width: 677px) {
+  .leaflet-control-fullscreen {
+    top: 12px !important;
+    left: 12px !important;
+  }
+
+  .leaflet-control-return {
+    top: 12px !important;
+    left: 60px !important;
+  }
+
+  .leaflet-control-locate {
+    position: absolute !important;
+    top: 12px !important;
+    left: 108px !important;
+  }
+
+  .leaflet-control-zoom {
+    position: absolute !important;
+    top: 60px !important;
+    left: 12px !important;
+    margin: 0 !important;
+  }
+}
+
+/* Attribution Control */
+@media (max-width: 677px) {
+  .leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  font-size: 11px !important;
+  max-width: 90% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 18px 0px 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #666 !important;
+  position: fixed;
+  top: 10px !important;
+  right: 12px !important;
+  margin: 0 !important;
+  }
+
+.leaflet-control-attribution a {
+  color: #4B5563 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  }
+
+.leaflet-control-attribution a:hover {
+  text-decoration: underline !important;
+  color: #1f3537 !important;
+  }
+}
+
+/* Root container */
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Fullscreen styles */
+#app-container:fullscreen,
+#app-container:-webkit-full-screen,
+#app-container:-ms-fullscreen {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+/* Cluster marker styles */
+.marker-cluster-small {
+  background-color: rgba(184, 219, 252, 0.6);
+}
+
+.marker-cluster-small div {
+  background-color: rgba(135, 204, 245, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rrgba(184, 219, 252, 0.6);
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(147, 208, 243, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(184, 219, 252, 0.6);
+}
+
+.marker-cluster-large div {
+  background-color: rgba(147, 208, 243, 0.6);
+}
+
+/* Location marker */
+.location-marker {
+  width: 24px !important;
+  height: 24px !important;
+  margin-left: -12px !important;
+  margin-top: -12px !important;
+  border-radius: 50% !important;
+  border: 2px solid white !important;
+  background-color: #4285f4 !important;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.3) !important;
+}
+
+.location-marker::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 6px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Chat animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.2s ease-out;
+}
