@@ -18,6 +18,8 @@ export interface SearchResult {
   description?: string;
   location?: string;
   url?: string;
-  coordinates?: [number, number];
+  coordinates: [number, number];
   image?: string;
+  distance?: number;
+  queryContext?: string;
 }
